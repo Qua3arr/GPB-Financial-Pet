@@ -1,7 +1,7 @@
 # Финансовый питомец 🐾
 
 ![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Deployed-brightgreen)
-![Godot Engine](https://img.shields.io/badge/Godot-4.x-478CBF?logo=godotengine)
+![Godot Engine](https://img.shields.io/badge/Godot-4.5-478CBF?logo=godotengine)
 ![WebAssembly](https://img.shields.io/badge/WebAssembly-supported-654FF0?logo=webassembly)
 
 **Игровой проект для хакатона от Газпромбанка** - интерактивное приложение для повышения финансовой грамотности через геймификацию.
