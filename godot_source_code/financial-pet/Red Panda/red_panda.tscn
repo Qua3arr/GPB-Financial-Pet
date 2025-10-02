@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsbieqmixnpbq"]
+
+[ext_resource type="Texture2D" uid="uid://cp5crugbra88r" path="res://Assets/Red Panda/red_panda_main_character_shadow.png" id="1_s8yvg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6to2o"]
+atlas = ExtResource("1_s8yvg")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dep07"]
+atlas = ExtResource("1_s8yvg")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_isclo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6to2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dep07")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 2.0
+}]
+
+[node name="RedPanda" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_isclo")
+animation = &"Idle"
+autoplay = "Idle"
+frame = 1
+frame_progress = 0.4145288

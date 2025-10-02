@@ -1,0 +1,426 @@
+[gd_scene load_steps=32 format=3 uid="uid://c6kkq4cpq6esf"]
+
+[ext_resource type="Script" uid="uid://uqsuwbcblldc" path="res://Main Screen/main_screen.gd" id="1_4u6rd"]
+[ext_resource type="Texture2D" uid="uid://ddyep7ea3dk1s" path="res://Assets/Background/bg_2_ver2.png" id="2_4u6rd"]
+[ext_resource type="Texture2D" uid="uid://ens7f42xdglg" path="res://Assets/Progress Bar/progress_bar_fill.png" id="2_7mu4d"]
+[ext_resource type="Texture2D" uid="uid://bxf2tamrhv1qo" path="res://Assets/Icons/settings_icon.png" id="2_sgd11"]
+[ext_resource type="Texture2D" uid="uid://p4pxgwdiivv" path="res://Assets/Icons/calendar_icon.png" id="3_itkxq"]
+[ext_resource type="Texture2D" uid="uid://cusmk2dqn810i" path="res://Assets/Progress Bar/progress_bar_border.png" id="3_xb55d"]
+[ext_resource type="Texture2D" uid="uid://culbykw3q2xat" path="res://Assets/Icons/learn_button_icon.png" id="4_eqjvh"]
+[ext_resource type="Texture2D" uid="uid://bn7vjknvxe8qm" path="res://Assets/Icons/MonetaIcon.png" id="4_vjyax"]
+[ext_resource type="Texture2D" uid="uid://b5qwuxenuyhmg" path="res://Assets/Icons/sandwich_icon.png" id="4_xb55d"]
+[ext_resource type="Texture2D" uid="uid://ddo2sko1hb4u2" path="res://Assets/Icons/play_button_icon.png" id="5_6pika"]
+[ext_resource type="Texture2D" uid="uid://cvwbd4i44p1r1" path="res://Assets/Icons/learn_button_icon_pressed.png" id="5_ct7jd"]
+[ext_resource type="Texture2D" uid="uid://dcdyughivjjm3" path="res://Assets/Icons/mood_icon.png" id="5_gxf5b"]
+[ext_resource type="Texture2D" uid="uid://ckjxs27bh7kn6" path="res://Assets/Icons/hat_icon.png" id="6_kv67s"]
+[ext_resource type="Texture2D" uid="uid://dbpcj8by3ndpo" path="res://Assets/Icons/my_briefcase_button_icon.png" id="6_li0c1"]
+[ext_resource type="Texture2D" uid="uid://sjq86dpvfxnu" path="res://Assets/Icons/shop_button_icon.png" id="7_5vb3u"]
+[ext_resource type="Texture2D" uid="uid://bpnbcsp2xboll" path="res://Assets/Icons/play_button_icon_pressed.png" id="7_vjyax"]
+[ext_resource type="Texture2D" uid="uid://c3ubgw1dd0amo" path="res://Assets/Icons/shop_button_icon_pressed.png" id="8_li0c1"]
+[ext_resource type="Texture2D" uid="uid://b2d0hkad87nhr" path="res://Assets/Icons/my_briefcase_button_icon_pressed.png" id="9_6wdn8"]
+[ext_resource type="PackedScene" uid="uid://bsbieqmixnpbq" path="res://Red Panda/red_panda.tscn" id="13_6wdn8"]
+[ext_resource type="AudioStream" uid="uid://drwhtm41nkf2x" path="res://Assets/Sounds/Music/cute pack 2.wav" id="20_4kf7e"]
+[ext_resource type="AudioStream" uid="uid://4oba8vwjld7r" path="res://Assets/Sounds/sfx/Abstract1.mp3" id="21_802sk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gxf5b"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gxf5b"]
+texture = ExtResource("4_xb55d")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kv67s"]
+texture = ExtResource("5_gxf5b")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4u6rd"]
+texture = ExtResource("6_kv67s")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4u6rd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_itkxq"]
+line_spacing = -3.0
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vjyax"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6wdn8"]
+texture = ExtResource("4_vjyax")
+
+[sub_resource type="LabelSettings" id="LabelSettings_rxnhg"]
+line_spacing = -3.0
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_84peq"]
+line_spacing = -3.0
+font_color = Color(0.14509805, 0.22745098, 0.29803923, 1)
+
+[node name="MainScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4u6rd")
+
+[node name="BackGroundImage" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4u6rd")
+stretch_mode = 6
+
+[node name="Interface" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="Interface"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 40
+
+[node name="Bars" type="VBoxContainer" parent="Interface/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Panel" type="Panel" parent="Interface/MarginContainer/Bars"]
+custom_minimum_size = Vector2(0, 370)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gxf5b")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Interface/MarginContainer/Bars"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="FullnessText" type="Label" parent="Interface/MarginContainer/Bars/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "СЫТОСТЬ"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Interface/MarginContainer/Bars/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="FullnessProgressBar" type="TextureProgressBar" parent="Interface/MarginContainer/Bars/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(269, 16)
+layout_mode = 2
+value = 50.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_top = 2
+stretch_margin_right = 2
+stretch_margin_bottom = 2
+texture_under = ExtResource("2_7mu4d")
+texture_over = ExtResource("3_xb55d")
+texture_progress = ExtResource("2_7mu4d")
+tint_under = Color(0.23412845, 0.3387321, 0.23264638, 1)
+tint_progress = Color(5.5350365e-06, 0.82555395, 0.19056645, 1)
+
+[node name="Panel" type="Panel" parent="Interface/MarginContainer/Bars/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(17, 13)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_gxf5b")
+
+[node name="MoodText" type="Label" parent="Interface/MarginContainer/Bars/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "НАСТРОЕНИЕ"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Interface/MarginContainer/Bars/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="MoodProgressBar" type="TextureProgressBar" parent="Interface/MarginContainer/Bars/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(269, 16)
+layout_mode = 2
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_top = 2
+stretch_margin_right = 2
+stretch_margin_bottom = 2
+texture_under = ExtResource("2_7mu4d")
+texture_over = ExtResource("3_xb55d")
+texture_progress = ExtResource("2_7mu4d")
+tint_under = Color(0.4844284, 0.37126568, 0.36069766, 1)
+tint_progress = Color(1, 0.33187678, 0.30007407, 1)
+
+[node name="Panel" type="Panel" parent="Interface/MarginContainer/Bars/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_kv67s")
+
+[node name="FinancialText" type="Label" parent="Interface/MarginContainer/Bars/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "УРОВЕНЬ ФИНАНСОВОЙ ГРАМОТНОСТИ"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Interface/MarginContainer/Bars/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="FinancialProgressBar" type="TextureProgressBar" parent="Interface/MarginContainer/Bars/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(269, 16)
+layout_mode = 2
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_top = 2
+stretch_margin_right = 2
+stretch_margin_bottom = 2
+texture_under = ExtResource("2_7mu4d")
+texture_over = ExtResource("3_xb55d")
+texture_progress = ExtResource("2_7mu4d")
+tint_under = Color(0.61397296, 0.6065359, 0.55975705, 1)
+tint_progress = Color(0.94881374, 0.61998403, 0.0755619, 1)
+
+[node name="Panel" type="Panel" parent="Interface/MarginContainer/Bars/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_4u6rd")
+
+[node name="Panel2" type="Panel" parent="Interface/MarginContainer/Bars"]
+custom_minimum_size = Vector2(330, 88)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4u6rd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Interface/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 350
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Interface/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="SettingButton" type="TextureButton" parent="Interface/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource("2_sgd11")
+
+[node name="MarginContainer" type="MarginContainer" parent="Interface/MarginContainer/VBoxContainer/HBoxContainer/SettingButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_bottom = -15
+
+[node name="SettingsText" type="Label" parent="Interface/MarginContainer/VBoxContainer/HBoxContainer/SettingButton/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+text = "Настройки"
+
+[node name="DailyBonusButton" type="TextureButton" parent="Interface/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("3_itkxq")
+
+[node name="MarginContainer" type="MarginContainer" parent="Interface/MarginContainer/VBoxContainer/HBoxContainer/DailyBonusButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_bottom = -26
+
+[node name="DailyBonusText" type="Label" parent="Interface/MarginContainer/VBoxContainer/HBoxContainer/DailyBonusButton/MarginContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+text = "Ежедневный бонус"
+label_settings = SubResource("LabelSettings_itkxq")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Panel" type="Panel" parent="Interface/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(37, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vjyax")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Interface/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="CreditsIcon" type="Panel" parent="Interface/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_6wdn8")
+
+[node name="MoneyLabel" type="Label" parent="Interface/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(42, 0)
+layout_mode = 2
+text = "Финансы 500000"
+label_settings = SubResource("LabelSettings_rxnhg")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Interface/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_constants/separation = 11
+
+[node name="LearnButton" type="TextureButton" parent="Interface/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_eqjvh")
+texture_pressed = ExtResource("5_ct7jd")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Interface/MarginContainer/VBoxContainer/HBoxContainer2/LearnButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="LearnText" type="Label" parent="Interface/MarginContainer/VBoxContainer/HBoxContainer2/LearnButton/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.14509805, 0.22745098, 0.29803923, 1)
+text = "Изучить"
+horizontal_alignment = 1
+
+[node name="PlayButton" type="TextureButton" parent="Interface/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = ExtResource("5_6pika")
+texture_pressed = ExtResource("7_vjyax")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Interface/MarginContainer/VBoxContainer/HBoxContainer2/PlayButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="PlayText" type="Label" parent="Interface/MarginContainer/VBoxContainer/HBoxContainer2/PlayButton/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.14509805, 0.22745098, 0.29803923, 1)
+text = "Поиграть"
+horizontal_alignment = 1
+
+[node name="MyBriefcase" type="TextureButton" parent="Interface/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = ExtResource("6_li0c1")
+texture_pressed = ExtResource("9_6wdn8")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Interface/MarginContainer/VBoxContainer/HBoxContainer2/MyBriefcase"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="BriefcaseText" type="Label" parent="Interface/MarginContainer/VBoxContainer/HBoxContainer2/MyBriefcase/MarginContainer"]
+custom_minimum_size = Vector2(56, 0)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.14509805, 0.22745098, 0.29803923, 1)
+text = "Мой портфель"
+label_settings = SubResource("LabelSettings_84peq")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ShopButton" type="TextureButton" parent="Interface/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = ExtResource("7_5vb3u")
+texture_pressed = ExtResource("8_li0c1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Interface/MarginContainer/VBoxContainer/HBoxContainer2/ShopButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="ShopText" type="Label" parent="Interface/MarginContainer/VBoxContainer/HBoxContainer2/ShopButton/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.14509805, 0.22745098, 0.29803923, 1)
+text = "Магазин"
+horizontal_alignment = 1
+
+[node name="Menu" type="Control" parent="Interface"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="RedPanda" parent="." instance=ExtResource("13_6wdn8")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_4kf7e")
+volume_db = -5.0
+autoplay = true
+bus = &"Music"
+
+[node name="ButtonsSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_802sk")
+bus = &"SFX"
+
+[connection signal="pressed" from="Interface/MarginContainer/VBoxContainer/HBoxContainer/SettingButton" to="." method="_on_setting_button_pressed"]
+[connection signal="pressed" from="Interface/MarginContainer/VBoxContainer/HBoxContainer/DailyBonusButton" to="." method="_on_daily_bonus_button_pressed"]
+[connection signal="pressed" from="Interface/MarginContainer/VBoxContainer/HBoxContainer2/LearnButton" to="." method="_on_learn_button_pressed"]
+[connection signal="pressed" from="Interface/MarginContainer/VBoxContainer/HBoxContainer2/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Interface/MarginContainer/VBoxContainer/HBoxContainer2/MyBriefcase" to="." method="_on_my_briefcase_pressed"]
+[connection signal="pressed" from="Interface/MarginContainer/VBoxContainer/HBoxContainer2/ShopButton" to="." method="_on_shop_button_pressed"]
+[connection signal="child_exiting_tree" from="Interface/Menu" to="." method="_on_menu_child_exiting_tree"]
